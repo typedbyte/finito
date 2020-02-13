@@ -1,0 +1,8 @@
+resolver: lts-14.17
+
+packages:
+- .
+
+extra-deps:
+- numeric-domains-0.1.0.0
+- propeller-0.1.0.0

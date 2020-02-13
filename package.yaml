@@ -1,0 +1,41 @@
+name:           finito
+version:        0.1.0.0
+github:         "typedbyte/finito"
+license:        BSD3
+author:         "Michael Szvetits"
+maintainer:     "typedbyte@qualified.name"
+copyright:      "2020 Michael Szvetits"
+synopsis:       Constraint Solver for Finite Domains
+category:       AI
+description:    Please see the README on GitHub at <https://github.com/typedbyte/finito#readme>
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+dependencies:
+- base            >= 4.7     && < 5
+- numeric-domains >= 0.1     && < 0.2
+- propeller       >= 0.1     && < 0.2
+- transformers    >= 0.5.2.0 && < 0.6
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - AI.Search.FiniteDomain.Int
+
+tests:
+  sudoku:
+    main:         Main.hs
+    source-dirs:  examples/sudoku
+    dependencies:
+    - finito
+    - split
+
+  queens:
+    main:         Main.hs
+    source-dirs:  examples/queens
+    dependencies:
+    - finito
+
+ghc-options: -Wall
